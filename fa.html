@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title> سعید جلالی | Django & DRF</title>
+  <style>
+    :root{
+      --bg:#0b0f19;
+      --card:#101624;
+      --muted:#7f8ba5;
+      --text:#eaf0ff;
+      --accent:#6ab3ff;
+      --chip:#192339;
+      --ok:#45c18f;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--text);font:15px/1.8 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:980px;margin:40px auto;padding:0 20px}
+    .header{display:grid;grid-template-columns:120px 1fr auto;gap:24px;align-items:center;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));padding:24px;border:1px solid #1a2236;border-radius:18px}
+    .avatar{width:120px;height:120px;border-radius:20px;background:linear-gradient(135deg,#1b2438,#0f1424);display:flex;align-items:center;justify-content:center;border:1px solid #1b2947}
+    .avatar img{width:120px;height:120px;border-radius:20px}
+    .avatar svg{width:64px;height:64px;opacity:.8}
+    .headline h1{margin:0 0 6px;font-size:28px;letter-spacing:.2px}
+    .headline .role{font-size:16px;color:var(--muted)}
+    .actions{display:flex;flex-direction: column;gap:10px}
+    .btn{padding:10px 14px;border-radius:12px;border:1px solid #233052;background:#11192b;color:var(--text);cursor:pointer}
+    .btn-github{padding:10px 14px;border-radius:12px;border:1px solid #233052;background:#11192b;color:var(--text);cursor:pointer}
+    .btn-primary{background:linear-gradient(135deg,#1b66ff,#6ab3ff);color:#001129;border:0; text-align: center;}
+    .card{background:var(--card);border:1px solid #18233b;border-radius:18px;padding:20px;margin-top:20px}
+    h2{margin:0 0 12px;font-size:18px}
+    p{margin:0 0 8px;color:#cfd7ee}
+    ul{margin:8px 0 0 0;padding:0 18px}
+    li{margin:6px 0}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .chip{background:var(--chip);border:1px solid #233251;color:#cfe1ff;padding:6px 10px;border-radius:999px;font-size:13px;padding: 2px 12px 2px 12px;}
+    .chip i {margin-left: 6px;vertical-align: middle;}
+    .row{display:grid;grid-template-columns:140px 1fr;gap:14px;margin:10px 0;padding:12px;border-radius:12px;border:1px dashed #233251;background:#0f1526}
+    .muted{color:var(--muted)}
+    .muted-prject{color:var(--muted);margin-top: 8px;}
+    .list-tight li{margin:2px 0}
+    .two-col{columns:2;column-gap:16px}
+    .footer{margin-top:18px;color:#9bb3db;font-size:12px;text-align:center}
+    @media print{
+      :root{--bg:#fff;--card:#fff;--text:#111;--muted:#555;--chip:#f1f4fa}
+      body{background:#fff;color:#111}
+      .header,.card{border-color:#ddd}
+      .btn,.actions{display:none!important}
+      .container{margin:0 auto}
+      a{color:#000}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="avatar" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-5.33 0-8 2.67-8 5v1h16v-1c0-2.33-2.67-5-8-5Z"/></svg>
+      </div>
+      <div class="headline">
+        <h1>سعید جلالی</h1>
+        <div class="role">توسعه‌دهنده ارشد بک‌اند (Python, Django)</div>
+        <div class="muted" style="margin-top:6px">متولد ۱۳۸۰  • کاردانی مهندسی کامپیوتر</div>
+      </div>
+      <div class="actions">
+        <a class="btn-github btn-primary" href="https://github.com/dev-MrJalali">GitHub</a>
+      </div>
+    </header>
+
+    <section class="card">
+        <h2>🍵 درباره من</h2>
+        <p>
+            من یک توسعه‌دهندهٔ بک‌اندم با بیش از ۵ سال تجربه کار با 
+            <strong>Django</strong> و <strong>DRF</strong>. 
+            توی این مدت روی پروژه‌های مختلفی کار کردم؛ از سیستم‌های سادهٔ 
+            <strong>Monolithic</strong> گرفته تا ساختارهای 
+            <strong>Modular Monolith</strong> و <strong>Microservices</strong>، 
+            جایی که معماری تمیز و قابل گسترش خیلی برام اهمیت داشته.
+        </p>
+        <p>
+            از پیاده‌سازی 
+            <strong>سیستم‌های معاملات لحظه‌ای</strong>
+            گرفته تا توسعهٔ <strong>پروژه‌های فروشگاهی</strong>
+            با تمرکز بر بهینه‌سازی عملکرد و تجربهٔ کاربری، با استفاده از 
+            <strong>Celery / CeleryBeat / Redis</strong>
+            و همچنین تجربه فعالیت هایی از جمله <strong>Automation (Selenium)</strong>
+            و <strong>Web Crawling (Beautiful Soup)</strong> رو هم دارم.
+        </p>
+        <p>
+            هدفم اینه که در هر پروژه، تلاش کنم سیستمی امن، مقیاس‌پذیر و قابل نگهداری طراحی و توسعه بدم که پرفورمنس بالایی هم داشته باشد.
+        </p>
+        
+    </section>
+
+    <section class="card">
+        <h2>🧰 مهارت‌های فنی </h2>
+
+        <h3>تجربه حرفه‌ای</h3>
+        <div class="chips">
+            <span class="chip"><i class="fab fa-python"></i> Python</span>
+            <span class="chip"><i class="fas fa-server"></i> Django & DRF</span>
+            <span class="chip"><i class="fas fa-shield-alt"></i> Encryption & Security</span>
+            <span class="chip"><i class="fas fa-network-wired"></i> Django Channels</span>
+            <span class="chip"><i class="fas fa-memory"></i> Redis</span>
+            <span class="chip"><i class="fas fa-tasks"></i> Celery</span>
+            <span class="chip"><i class="fas fa-database"></i> PostgreSQL</span>
+            <span class="chip"><i class="fab fa-docker"></i> Docker</span>
+            <span class="chip"><i class="fas fa-server"></i> Nginx</span>
+        </div>
+
+        <h3>آشنایی / متوسط</h3>
+        <div class="chips">
+            <span class="chip"><i class="fab fa-js"></i> JS</span>
+            <span class="chip"><i class="fas fa-server"></i> Node.js & Fastify</span>
+            <span class="chip"><i class="fas fa-database"></i> MongoDB</span>
+            <span class="chip"><i class="fas fa-desktop"></i> Qt (PyQT & PySide)</span>
+            <span class="chip"><i class="fas fa-search"></i> Selenium</span>
+            <span class="chip"><i class="fas fa-book"></i> Beautiful Soup</span>
+            <span class="chip"><i class="fas fa-cloud"></i> MinIO</span>
+            <span class="chip"><i class="fas fa-lock"></i> HashiCorp Vault</span>
+            <span class="chip"><i class="fas fa-project-diagram"></i> CI/CD</span>
+            <span class="chip"><i class="fab fa-git-alt"></i> Git</span>
+        </div>
+    </section>
+
+
+    <section class="card">
+        <h2>⚡ تجربه کاری منتخب</h2>
+
+        <div class="row">
+            <div class="muted">۱۳۹۸ — اکنون</div>
+            <div>
+            <strong>فریلنس/همکاری پروژه‌ای — توسعه‌دهنده بک‌اند</strong>
+            <ul>
+                <li>یکپارچه‌سازی سرویس‌های جانبی، مدیریت تیم، زمان‌بندی پروژه‌ها و طراحی دیتابیس و معماری پروژه</li>
+                <li>پیاده‌سازی سیستم‌های احراز هویت و مدیریت نشست‌ها با امنیت بالا و بروزرسانی خودکار توکن‌ها.</li>
+                <li>توسعهٔ سیستم معاملات لحظه‌ای طلا و سکه به صورت ترکیبی (Rest, WebSocket) برپایه Django</li>
+                <li>دیپلوی فروشگاه آنلاین با Next.js و Django پشت Nginx با Docker Compose</li>
+                <li>بهینه‌سازی پاسخگویی API و کش پرس‌وجوها با Redis برای پرفورمنس بالاتر.</li>
+                <li>رمزنگاری فایل‌های حساس کاربران و مدیریت امن کلیدها با Vault.</li>
+                <li>کار با دیتابیس‌های SQL و NoSQL، بهینه‌سازی کوئری‌ها، ایندکس‌گذاری و رفع باگ</li>
+                <li>همکاری در پروژه‌های لارج اسکیل توسعه داده شده با Fastify</li>
+                <li>طراحی رابط کاربری دسکتاپ با Qt</li>
+                <li>پیاده‌سازی اتوماسیون دریافت آگهی‌های شغلی با Selenium و Beautiful Soup؛ ذخیره‌سازی جزئیات </li>
+            </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="card">
+      <h2>نمونه پروژه‌ها و دستاوردها</h2>
+
+      <div class="row">
+        <div class="muted-prject">معاملات لحظه‌ای</div>
+        <div>
+          <ul class="list-tight">
+            <li>سیستم دریافت قیمت شخصی سازی شده و بهینه سازی تعداد درخواست به Api مرجع</li>
+            <li>پیاده‌سازی به صورت ترکیبی : کارکرد اصلی سیستم برپایه Rest طراحی شده و فقط قسمت تغییرات معاملات و قیمت با استفاده از WebSocket پیاده سازی شده است</li>
+            <li>جلوگیری از Race Condition در تغییر وضعیت معامله(معاملات به دو صورت خودکار و تایید توسط ادمین قابل تنظیم بود) و همچنین تضمین ویژگی‌های transactional (قابلیت idempotency و بازگشت امن در صورت خطا) در ایجاد معامله</li>
+            <li>بهینه سازی تجربه کاربر و افزایش پرفورمنس سیستم با استفاده از Cron Jobs و Background Tasks</li>
+            <li>استفاده از Celery و Celery Beat برای خودکارسازی برخی فرایند ها و async کردن فرایند های زمان بر (I/O Bound)</li>
+            <li>پیاده سازی تضمین تحویل پیام و ارسال مجدد پیام در صورت بروز مشکل (Ack)</li>
+            <li>ارور هندلینگ کامل به همراه سیستم لاگ گیری به صورت فایل</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="muted-prject">فروشگاه آنلاین</div>
+        <div>
+          <ul class="list-tight">
+              <li>سیستم Cache و  Invalidate هوشمند با استفاده از Redis</li>
+            <li>مدل‌سازی کامل محصولات، سفارشات و تنوع‌ها با Queryهای پیچیده در PostgreSQL</li>
+            <li>جلوگیری از Race Condition با استفاده از رزرو محصول و خودکار سازی فرایند خروج از رزرو </li>
+            <li>بهینه سازی تجربه کاربر و افزایش پرفورمنس سیستم با استفاده از Cron Jobs و Background Tasks</li>
+            <li>استفاده از Celery و Celery Beat برای خودکارسازی برخی فرایند ها و async کردن فرایند های زمان بر (I/O Bound)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="muted-prject">قرارداد هوشمند</div>
+        <div>
+          <ul class="list-tight">
+            <li>یکپارچه‌سازی HashiCorp Vault برای مدیریت Secrets و همچنین تغییر کلید های رمزنگاری داخل سیستم</li>
+            <li>ایجاد و کنترل لایسنس برای هر محصول و فرایند هایی برای جلوگیری از استفاده بیش از یکبار از محصول</li>
+            <li>کنترل فایل های هر محصول و جلوگیری از دسترسی غیرمجاز و ذخیره ایمن فایل ها و لینک دانلود تصادفی</li>
+            <li>کنترل قرارداد و پرداخت مرحله ای به همراه تایید ادمین و دخیره ایمن قرار داد و نمایش بر اساس سطح دسترسی</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>اطلاعات تماس</h2>
+      <div class="row"><div class="muted">تلفن</div><div><a href="tel:09913431048">۰۹۹۱۳۴۳۱۰۴۸</a></div></div>
+      <div class="row"><div class="muted">ایمیل</div><div class="muted">work.saeidjalali@gmail.com</div></div>
+      <div class="row"><div class="muted">وضعیت</div><div>آماده همکاری به صورت دورکاری و یا حضوری( اولویت با ریموت ) به صورت تمام وقت، پاره وقت و پروژه ای</div></div>
+    </section>
+    <br>
+  </div>
+</body>
+</html>
