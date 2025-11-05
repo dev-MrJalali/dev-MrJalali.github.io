@@ -27,9 +27,12 @@
     .headline h1{margin:0 0 6px;font-size:28px;letter-spacing:.2px}
     .headline .role{font-size:16px;color:var(--muted)}
     .actions{display:flex;flex-direction: column;gap:10px}
-    .btn{padding:10px 14px;border-radius:12px;border:1px solid #233052;background:#11192b;color:var(--text);cursor:pointer}
+    .btn { padding: 10px 14px; border-radius: 12px; border: 1px solid #233052; background: #11192b; color: var(--text); cursor: pointer; }
     .btn-github{padding:10px 14px;border-radius:12px;border:1px solid #233052;background:#11192b;color:var(--text);cursor:pointer}
-    .btn-primary{background:linear-gradient(135deg,#1b66ff,#6ab3ff);color:#001129;border:0; text-align: center;}
+    .btn-primary { background: linear-gradient(135deg,#1b66ff,#6ab3ff); color: #001129; border: 0; }
+    .btn-secondary { background: linear-gradient(135deg, #1a2236, #233052); color: var(--text); border: 1px solid #2b3754; transition: all 0.2s ease; }
+    .btn-secondary:hover { background: linear-gradient(135deg, #233052, #2f3e62); transform: translateY(-2px); }
+    .lang-toggle { text-align: center; }    
     .card{background:var(--card);border:1px solid #18233b;border-radius:18px;padding:20px;margin-top:20px}
     h2{margin:0 0 12px;font-size:18px}
     p{margin:0 0 8px;color:#cfd7ee}
@@ -44,6 +47,8 @@
     .list-tight li{margin:2px 0}
     .two-col{columns:2;column-gap:16px}
     .footer{margin-top:18px;color:#9bb3db;font-size:12px;text-align:center}
+    .lang-section {display: none;transition: all 0.3s ease;}
+    .lang-section.active {display: block; }
     @media print{
       :root{--bg:#fff;--card:#fff;--text:#111;--muted:#555;--chip:#f1f4fa}
       body{background:#fff;color:#111}
@@ -58,19 +63,31 @@
   <div class="container">
     <header class="header">
       <div class="avatar" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-5.33 0-8 2.67-8 5v1h16v-1c0-2.33-2.67-5-8-5Z"/></svg>
+        <img src="./Profile.jpg" alt="Profile">      
       </div>
-      <div class="headline">
+
+      <!-- Persian Content -->
+      <div class="headline lang-section lang-fa active">
         <h1>سعید جلالی</h1>
         <div class="role">توسعه‌دهنده ارشد بک‌اند (Python, Django)</div>
         <div class="muted" style="margin-top:6px">متولد ۱۳۸۰  • کاردانی مهندسی کامپیوتر</div>
       </div>
+      
+      <!-- English Content -->
+       <div class="headline lang-section lang-en">
+        <h1>Saeid Jalali</h1>
+        <div class="role">Senior Backend Developer (Python, Django)</div>
+        <div class="muted" style="margin-top:6px">Born 2001 • Associate Degree in Computer Engineering</div>
+      </div>
+
       <div class="actions">
         <a class="btn-github btn-primary" href="https://github.com/dev-MrJalali">GitHub</a>
+        <button class="btn btn-secondary lang-toggle" id="lang-toggle">EN</button>
       </div>
     </header>
 
-    <section class="card">
+    <!-- Persian Content -->
+    <section class="card lang-section lang-fa active" dir="rtl">
         <h2>🍵 درباره من</h2>
         <p>
             من یک توسعه‌دهندهٔ بک‌اندم با بیش از ۵ سال تجربه کار با 
@@ -92,30 +109,55 @@
         <p>
             هدفم اینه که در هر پروژه، تلاش کنم سیستمی امن، مقیاس‌پذیر و قابل نگهداری طراحی و توسعه بدم که پرفورمنس بالایی هم داشته باشد.
         </p>
-        
+    </section>
+    
+    <!-- English Content -->
+    <section class="card lang-section lang-en" dir="ltr">
+      <h2>🍵 About Me</h2>
+      <p>
+          I am a backend developer with over 5 years of experience working with 
+          <strong>Django</strong> and <strong>DRF</strong>. 
+          During this time, I have worked on a variety of projects, from simple 
+          <strong>Monolithic</strong> systems to 
+          <strong>Modular Monolith</strong> and <strong>Microservices</strong> architectures, 
+          where clean and scalable design has always been a priority.
+      </p>
+      <p>
+          My experience ranges from implementing 
+          <strong>real-time trading systems</strong> to developing 
+          <strong>e-commerce projects</strong>, focusing on performance optimization and user experience, 
+          using <strong>Celery / CeleryBeat / Redis</strong>, 
+          and also engaging in tasks like <strong>Automation (Selenium)</strong> 
+          and <strong>Web Crawling (Beautiful Soup)</strong>.
+      </p>
+      <p>
+          My goal in every project is to design and develop systems that are secure, scalable, maintainable, 
+          and high-performing.
+      </p>
     </section>
 
-    <section class="card">
+    <!-- Persian Content -->
+    <section class="card lang-section lang-fa active">
         <h2>🧰 مهارت‌های فنی </h2>
 
         <h3>تجربه حرفه‌ای</h3>
         <div class="chips">
             <span class="chip"><i class="fab fa-python"></i> Python</span>
             <span class="chip"><i class="fas fa-server"></i> Django & DRF</span>
-            <span class="chip"><i class="fas fa-shield-alt"></i> Encryption & Security</span>
             <span class="chip"><i class="fas fa-network-wired"></i> Django Channels</span>
+            <span class="chip"><i class="fas fa-shield-alt"></i> Encryption & Security</span>
             <span class="chip"><i class="fas fa-memory"></i> Redis</span>
             <span class="chip"><i class="fas fa-tasks"></i> Celery</span>
             <span class="chip"><i class="fas fa-database"></i> PostgreSQL</span>
-            <span class="chip"><i class="fab fa-docker"></i> Docker</span>
-            <span class="chip"><i class="fas fa-server"></i> Nginx</span>
-        </div>
-
-        <h3>آشنایی / متوسط</h3>
-        <div class="chips">
+          </div>
+          
+          <h3>آشنایی / متوسط</h3>
+          <div class="chips">
             <span class="chip"><i class="fab fa-js"></i> JS</span>
             <span class="chip"><i class="fas fa-server"></i> Node.js & Fastify</span>
             <span class="chip"><i class="fas fa-database"></i> MongoDB</span>
+            <span class="chip"><i class="fas fa-server"></i> Nginx</span>
+            <span class="chip"><i class="fab fa-docker"></i> Docker</span>
             <span class="chip"><i class="fas fa-desktop"></i> Qt (PyQT & PySide)</span>
             <span class="chip"><i class="fas fa-search"></i> Selenium</span>
             <span class="chip"><i class="fas fa-book"></i> Beautiful Soup</span>
@@ -125,9 +167,41 @@
             <span class="chip"><i class="fab fa-git-alt"></i> Git</span>
         </div>
     </section>
+    
+    <!-- English Content -->
+    <section class="card lang-section lang-en" dir="ltr">
+      <h2>🧰 Technical Skills</h2>
 
+      <h3>Professional Experience</h3>
+      <div class="chips">
+          <span class="chip"><i class="fab fa-python"></i> Python</span>
+          <span class="chip"><i class="fas fa-server"></i> Django & DRF</span>
+          <span class="chip"><i class="fas fa-network-wired"></i> Django Channels</span>
+          <span class="chip"><i class="fas fa-shield-alt"></i> Encryption & Security</span>
+          <span class="chip"><i class="fas fa-memory"></i> Redis</span>
+          <span class="chip"><i class="fas fa-tasks"></i> Celery</span>
+          <span class="chip"><i class="fas fa-database"></i> PostgreSQL</span>
+      </div>
 
-    <section class="card">
+      <h3>Familiar / Intermediate</h3>
+      <div class="chips">
+          <span class="chip"><i class="fab fa-js"></i> JavaScript</span>
+          <span class="chip"><i class="fas fa-server"></i> Node.js & Fastify</span>
+          <span class="chip"><i class="fas fa-database"></i> MongoDB</span>
+          <span class="chip"><i class="fas fa-server"></i> Nginx</span>
+          <span class="chip"><i class="fab fa-docker"></i> Docker</span>
+          <span class="chip"><i class="fas fa-desktop"></i> Qt (PyQt & PySide)</span>
+          <span class="chip"><i class="fas fa-search"></i> Selenium</span>
+          <span class="chip"><i class="fas fa-book"></i> Beautiful Soup</span>
+          <span class="chip"><i class="fas fa-cloud"></i> MinIO</span>
+          <span class="chip"><i class="fas fa-lock"></i> HashiCorp Vault</span>
+          <span class="chip"><i class="fas fa-project-diagram"></i> CI/CD</span>
+          <span class="chip"><i class="fab fa-git-alt"></i> Git</span>
+      </div>
+    </section>
+
+    <!-- Persian Content -->
+    <section class="card lang-section lang-fa active">
         <h2>⚡ تجربه کاری منتخب</h2>
 
         <div class="row">
@@ -149,9 +223,33 @@
             </div>
         </div>
     </section>
+    
+    <!-- English Content -->
+    <section class="card lang-section lang-en" dir="ltr">
+      <h2>⚡ Selected Work Experience</h2>
 
+      <div class="row">
+          <div class="muted">2019 — Present</div>
+          <div>
+              <strong>Freelance / Project Collaboration — Backend Developer</strong>
+              <ul>
+                  <li>Integrated external services, managed the team, scheduled projects, and designed databases and project architecture.</li>
+                  <li>Implemented secure authentication systems and session management with automatic token refresh.</li>
+                  <li>Developed a real-time gold and coin trading system using a hybrid approach (REST & WebSocket) based on Django.</li>
+                  <li>Deployed an online store with Next.js and Django behind Nginx using Docker Compose.</li>
+                  <li>Optimized API responses and query caching using Redis for higher performance.</li>
+                  <li>Encrypted sensitive user files and securely managed keys with HashiCorp Vault.</li>
+                  <li>Worked with SQL and NoSQL databases, optimized queries, created indexes, and fixed bugs.</li>
+                  <li>Collaborated on large-scale projects developed with Fastify.</li>
+                  <li>Designed desktop user interfaces with Qt.</li>
+                  <li>Implemented job ad automation using Selenium and Beautiful Soup, storing detailed data for easier use.</li>
+              </ul>
+          </div>
+      </div>
+    </section>
 
-    <section class="card">
+    <!-- Persian Content -->
+    <section class="card lang-section lang-fa active">
       <h2>نمونه پروژه‌ها و دستاوردها</h2>
 
       <div class="row">
@@ -168,7 +266,6 @@
           </ul>
         </div>
       </div>
-
       <div class="row">
         <div class="muted-prject">فروشگاه آنلاین</div>
         <div>
@@ -193,14 +290,99 @@
         </div>
       </div>
     </section>
+    
+    <!-- English Content -->
+    <section class="card lang-section lang-en" dir="ltr">
+    <h2>📝 Projects & Achievements</h2>
 
-    <section class="card">
+    <div class="row">
+        <div class="muted-prject">Real-Time Trading</div>
+        <div>
+            <ul class="list-tight">
+                <li>Customized price retrieval system with optimized API requests to the main data source.</li>
+                <li>Implemented a hybrid approach: core system built on REST, while trade and price updates handled via WebSocket.</li>
+                <li>Prevented race conditions in trade status changes (trades could be automatic or admin-approved) and ensured transactional properties (idempotency and safe rollback on errors).</li>
+                <li>Enhanced user experience and system performance using Cron Jobs and background tasks.</li>
+                <li>Used Celery and Celery Beat to automate processes and asynchronously handle I/O-bound tasks.</li>
+                <li>Implemented message delivery guarantees with automatic retries in case of failures (Ack).</li>
+                <li>Full error handling with file-based logging system.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="muted-prject">Online Store</div>
+        <div>
+            <ul class="list-tight">
+                <li>Smart caching and invalidation system using Redis.</li>
+                <li>Full modeling of products, orders, and variations with complex PostgreSQL queries.</li>
+                <li>Prevented race conditions using product reservation and automated the release process.</li>
+                <li>Improved user experience and system performance using Cron Jobs and background tasks.</li>
+                <li>Utilized Celery and Celery Beat to automate processes and handle long-running tasks asynchronously (I/O-bound).</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="muted-prject">Smart Contract System</div>
+        <div>
+            <ul class="list-tight">
+                <li>Integrated HashiCorp Vault for secure secrets management and rotating encryption keys within the system.</li>
+                <li>Created and managed product licenses with mechanisms to prevent multiple unauthorized uses.</li>
+                <li>Controlled access to product files, ensured secure storage, and generated randomized download links.</li>
+                <li>Managed contracts and staged payments with admin approval and secure storage, displaying content based on access level.</li>
+            </ul>
+        </div>
+    </div>
+    </section>
+
+    <!-- Persian Content -->
+    <section class="card lang-section lang-fa active">
       <h2>اطلاعات تماس</h2>
       <div class="row"><div class="muted">تلفن</div><div><a href="tel:09913431048">۰۹۹۱۳۴۳۱۰۴۸</a></div></div>
       <div class="row"><div class="muted">ایمیل</div><div class="muted">work.saeidjalali@gmail.com</div></div>
       <div class="row"><div class="muted">وضعیت</div><div>آماده همکاری به صورت دورکاری و یا حضوری( اولویت با ریموت ) به صورت تمام وقت، پاره وقت و پروژه ای</div></div>
     </section>
     <br>
-  </div>
+    
+    <!-- Persian Content -->
+    <section class="card lang-section lang-en">
+    <h2>Contact Information</h2>
+    <div class="row">
+        <div class="muted">Telegram</div>
+        <div><a href="tel:+989103177300">+98 910 317 7300</a></div>
+    </div>
+    <div class="row">
+        <div class="muted">Email</div>
+        <div class="muted">work.saeidjalali@gmail.com</div>
+    </div>
+    <div class="row">
+        <div class="muted">Availability</div>
+        <div>Available for remote or on-site collaboration (remote preferred), full-time, part-time, or project-based.</div>
+    </div>
+    </section>
+    <br>
+
+  <script>
+    const toggleBtn = document.getElementById('lang-toggle');
+    const faSections = document.querySelectorAll('.lang-fa');
+    const enSections = document.querySelectorAll('.lang-en');
+
+    toggleBtn.addEventListener('click', () => {
+      faSections.forEach(section => section.classList.toggle('active'));
+      enSections.forEach(section => section.classList.toggle('active'));
+
+      if (faSections[0].classList.contains('active')) {
+        document.documentElement.lang = 'fa';
+        document.documentElement.dir = 'rtl';
+        toggleBtn.textContent = 'EN';
+      } else {
+        document.documentElement.lang = 'en';
+        document.documentElement.dir = 'ltr';
+        toggleBtn.textContent = 'FA';
+      }
+    });
+
+</script>
 </body>
 </html>
